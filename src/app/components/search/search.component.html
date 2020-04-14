@@ -1,0 +1,13 @@
+
+<div class="row">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default">Buscar Artista</span>
+    </div>
+    <input type="text" #termino (keyup)="buscar(termino.value)" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  </div>
+</div>
+
+<app-loading *ngIf="loading" class="m-5"></app-loading>
+
+<app-tarjeta *ngIf="!loading" [items]="artistas"></app-tarjeta>
